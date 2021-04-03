@@ -6,7 +6,7 @@ Route::get('/home', function () {
     return view('welcome');
 });
 Route::namespace('Auth')->group(function () {
-    Route::get('login', 'LoginController@index')->name('login.index');
+    Route::get('/', 'LoginController@index')->name('login.index');
     Route::post('post-login', 'LoginController@login')->name('post.login');
     Route::get('logout', 'LoginController@logout')->name('logout');
 });
@@ -15,4 +15,6 @@ Route::middleware('user')->group(function(){
 });
 Route::middleware('admin')->group(function(){
     Route::get('admin-normal','AdminController@index')->name('admin.index');
+    Route::get('admin-normal/{admin}','AdminController@edit')->name('admin.edit');
+    Route::put('admin-normal/{admin}','AdminController@update')->name('admin.update');
 });

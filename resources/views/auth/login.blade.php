@@ -1,6 +1,11 @@
 @extends('auth.master')
 @section('main')
     <main>
+        @if (session('msg'))
+        <div class="aler alert-success" role="alert">
+            {{ session('msg') }}
+        </div>
+        @endif
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5">

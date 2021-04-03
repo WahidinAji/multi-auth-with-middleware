@@ -13,6 +13,7 @@
 <body>
 <h1>Ini admin user</h1>
 <a href="{{url()->route('logout')}}" class="btn btn-primary">log out</a>
+<a href="{{ url()->route('admin.edit',auth()->guard('admin')->user()->id) }}" class="btn btn-info">Change Password</a>
 
 <!-- Optional JavaScript; choose one of the two! -->
 
